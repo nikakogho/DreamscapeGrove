@@ -31,5 +31,21 @@ Tag: `v0.0.1-alpha`
   added live numeric display.
 * Verified: tree growth responds instantly to new slider settings.
 
-Commit: `global thresholds + settings UI (#dreamscapegrove)`
+Commit: `global thresholds + settings UI (#dreamscapegrove)`  
 Tag: `v0.0.2-alpha`
+
+## 2025-04-25
+
+* Added **device dropdown** to SettingsPanel.
+* `FocusManager` now exposes `FocusDevice` enum, factory, and `SwitchDevice()`.
+* UI auto-populates from `FocusManager.AvailableDevices`; currently only “Mock”.
+* Prepped for future adapters (IDisposable clean-up hook).
+* Wrapped all UI elements under `SettingsRoot`.
+
+* Added `SettingsToggleUI`:
+  - **F1** toggles visibility.
+  - Gear button in top-right calls same method.
+* Scene stays photo-real when UI is hidden; quick access during testing.
+
+Commit: feat(ui): add device dropdown + F1/gear toggle for Settings panel (#dreamscapegrove)
+Tag   : v0.0.3-alpha

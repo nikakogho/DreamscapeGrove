@@ -9,8 +9,8 @@ The project serves two goals:
    in new headsets or signal-processing pipelines with minimal code.
 
 ## Support Devices
-
-At first only mock signals. Next up will be Neurosity Crown, then Muse, then others.
+At first only **Mock** signals (sine wave).  
+**Device Pick Dropdown** in the Settings UI lets you switch sources; upcoming adapters will add *Neurosity Crown*, *Muse*, etc.
 
 ## User Quick Start
 
@@ -31,10 +31,13 @@ May need to install the Unity version first
 ### In Unity
 
 1. Open Assets/Scenes/SampleScene.Unity
-2. Press **Play** and enjoy
-3. Use the **Settings Panel** (top right)
-   - *Min. Focus* - focus threshold you can adjust for more/less sensitive experience
-   - *Min. Confidence* - mock source gives 0.95, choose based on your experience
+2. Press **Play**
+3. Toggle settings UI with the ⚙ icon or by pressing F1
+4. Settings
+   - Use the **Thresholds Panel** (top right)
+      - *Min. Focus* - focus threshold you can adjust for more/less sensitive experience
+      - *Min. Confidence* - mock source gives 0.95, choose based on your experience
+   - Use device dropdown to pick the device (currently only **Mock**)
 
 ## Dependencies
 
@@ -65,7 +68,7 @@ Assets/
 
 | Milestone | Status       | Target |
 | --------  | ----         | ------- |
-| 0.1       | ☐           | Settings UI – sliders for thresholds, device dropdown |
+| 0.1       | ✓           | Settings UI – sliders for thresholds, device dropdown |
 | 0.2       | ☐           | Neurosity “focus” adapter + on-screen focus graph |
 | 0.3       | ☐           | Raw EEG processing (theta:beta) + artifact rejection |
 | 0.4       | ☐           | WebGL build + first YouTube demo |
@@ -73,8 +76,8 @@ Assets/
 ## Contributing
 
 - Fork -> branch -> PR
-- Keep non-Unity logic in Core/
-- New headsets: implement IFocusSource and drop it in Adapters/
+- Keep non-Unity logic in **Core/**
+- New headsets: implement **IFocusSource** and drop it in **Adapters/**
 
 ## License
 
