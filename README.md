@@ -32,6 +32,18 @@ May need to install the Unity version first
 
 1. Open Assets/Scenes/SampleScene.Unity
 2. Press **Play** and enjoy
+3. Use the **Settings Panel** (top right)
+   - *Min. Focus* - focus threshold you can adjust for more/less sensitive experience
+   - *Min. Confidence* - mock source gives 0.95, choose based on your experience
+
+## Dependencies
+
+| Package | Version | Why |
+|---------|---------|-----|
+| TextMesh Pro | 3.2+ (comes with Unity) | Slider labels & future HUD |
+| URP  | 12 LTS    | Lightweight, WebGL-friendly visuals |
+
+These are declared in **Packages/manifest.json**; Unity will install them automatically.
 
 ## Folder Structure
 
@@ -51,12 +63,12 @@ Assets/
 
 ## Roadmap
 
-| Milestone    | Target |
-| --------     | ------- |
-| 0.1          | Settings UI – sliders for thresholds, device dropdown |
-| 0.2          | Neurosity “focus” adapter + on-screen focus graph |
-| 0.3          | Raw EEG processing (theta:beta) + artifact rejection |
-| 0.4          | WebGL build + first YouTube demo |
+| Milestone | Status       | Target |
+| --------  | ----         | ------- |
+| 0.1       | ☐           | Settings UI – sliders for thresholds, device dropdown |
+| 0.2       | ☐           | Neurosity “focus” adapter + on-screen focus graph |
+| 0.3       | ☐           | Raw EEG processing (theta:beta) + artifact rejection |
+| 0.4       | ☐           | WebGL build + first YouTube demo |
 
 ## Contributing
 

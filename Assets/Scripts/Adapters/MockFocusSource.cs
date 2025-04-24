@@ -22,7 +22,7 @@ namespace DreamscapeGrove.Adapters
 
             frame = new FocusFrame
             {
-                timestamp = DateTimeOffset.Now.ToUnixTimeSeconds(),
+                timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
                 focus = 0.5f + 0.4f * MathF.Sin(_phase),
                 confidence = 0.95f
             };

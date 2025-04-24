@@ -5,8 +5,6 @@ namespace DreamscapeGrove.Gameplay
 {
     public class TreeGrowth : MonoBehaviour
     {
-        [SerializeField] private float focusThreshold = 0.7f;
-        [SerializeField] private float confidenceThreshold = 0.9f;
         [SerializeField] private float growthRatePerS = 0.3f;
         [SerializeField] private float shrinkRatePerS = 0.15f;
 
@@ -24,7 +22,7 @@ namespace DreamscapeGrove.Gameplay
             var frame = _focusManager.CurrentFrame;
 
             _smoothedFocus = Mathf.Lerp(_smoothedFocus, frame.focus, 0.1f);
-            var shouldGrow = _smoothedFocus >= focusThreshold && frame.confidence >= confidenceThreshold;
+            var shouldGrow = _smoothedFocus >= FocusManager.FocusThreshold && frame.confidence >= FocusManager.ConfidenceThreshold;
 
             float targetY = shouldGrow ? 2 : 1;
             float rate = shouldGrow ? growthRatePerS : shrinkRatePerS;

@@ -1,5 +1,7 @@
 ## 2025-04-24
 
+### Commit 1
+
 * **Initial pipeline up:**  
   - Set up folder structure under `Assets/Scripts/` (`Core`, `Adapters`, `Gameplay`).  
   - Implemented `FocusFrame` + `IFocusSource` interface in `Core`.  
@@ -18,3 +20,16 @@
 
 Commit: `feat: smooth tree growth + initial diary entry (#dreamscapegrove)`  
 Tag: `v0.0.1-alpha`
+
+### Commit 2
+
+* Centralised thresholds in `FocusManager` (`FocusThreshold`, `ConfidenceThreshold`)
+  and removed per-tree sliders.
+* Implemented `FocusSettingsUI` – sliders now call
+  `FocusManager.SetFocusThreshold/SetConfidenceThreshold`.
+* UI polish: renamed labels to “Min. Focus” / “Min. Confidence” and
+  added live numeric display.
+* Verified: tree growth responds instantly to new slider settings.
+
+Commit: `global thresholds + settings UI (#dreamscapegrove)`
+Tag: `v0.0.2-alpha`

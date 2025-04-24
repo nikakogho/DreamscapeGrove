@@ -13,8 +13,27 @@ namespace DreamscapeGrove.Core
         public IFocusSource Source { get; private set; }
         public FocusFrame CurrentFrame { get; private set; }
 
+        public static float FocusThreshold { get; private set; } = 0.70f;
+        public static float ConfidenceThreshold { get; private set; } = 0.90f;
+
+        public static void SetFocusThreshold(float focus)
+        {
+            FocusThreshold = Mathf.Clamp01(focus);
+        }
+
+        public static void SetConfidenceThreshold(float confidence)
+        {
+            ConfidenceThreshold = Mathf.Clamp01(confidence);
+        }
+
         private void Awake()
         {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             Instance = this;
             Source = new MockFocusSource(); // later we will choose from UI
             Source.Init();
