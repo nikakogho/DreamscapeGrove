@@ -39,6 +39,11 @@ May need to install the Unity version first
       - *Min. Confidence* - mock source gives 0.95, choose based on your experience
    - Use device dropdown to pick the device (currently only **Mock**)
 
+- Live focus graph with confidence-based colours  
+  * Green = confidence ≥ confidence threshold  
+  * Yellow→Red = below confidence threshold  
+  * Black bar = required focus level (moves when focus threshold adjusted in settings)
+
 ## Dependencies
 
 | Package | Version | Why |
@@ -69,9 +74,10 @@ Assets/
 | Milestone | Status       | Target |
 | --------  | ----         | ------- |
 | 0.1       | ✓           | Settings UI – sliders for thresholds, device dropdown |
-| 0.2       | ☐           | Neurosity “focus” adapter + on-screen focus graph |
-| 0.3       | ☐           | Raw EEG processing (theta:beta) + artifact rejection |
-| 0.4       | ☐           | WebGL build + first YouTube demo |
+| 0.2       | ✓           | on-screen focus graph |
+| 0.3       | ☐           | Neurosity “focus” adapter |
+| 0.4       | ☐           | Raw EEG processing (theta:beta) + artifact rejection |
+| 0.5       | ☐           | WebGL build + first YouTube demo |
 
 ## Contributing
 

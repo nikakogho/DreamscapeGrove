@@ -49,3 +49,15 @@ Tag: `v0.0.2-alpha`
 
 Commit: feat(ui): add device dropdown + F1/gear toggle for Settings panel (#dreamscapegrove)
 Tag   : v0.0.3-alpha
+
+## 2025-04-29
+
+### focus graph & threshold
+
+* Implemented `UILineGraph` — Canvas-native polyline with 1-px quads.
+* `CurrentFocusUI` feeds frames at 20 Hz; buffer length equals rect width so graph always scrolls.
+* Colour logic: green above confidence threshold, red→yellow below.
+* Added cyan horizontal “Required Focus” line + label that tracks slider.
+
+Commit: focus graph colours + moving threshold bar (#dreamscapegrove)
+Tag   : v0.0.3-alpha
