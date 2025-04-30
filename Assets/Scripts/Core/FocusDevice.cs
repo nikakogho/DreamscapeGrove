@@ -3,7 +3,7 @@ namespace DreamscapeGrove.Core
     public enum FocusDevice
     {
         Mock,
-        // Neurosity,
+        Neurosity,
         // Muse,
         // OpenBCI
     }

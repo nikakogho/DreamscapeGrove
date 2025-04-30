@@ -19,7 +19,8 @@ namespace DreamscapeGrove.Core
 
         public static IReadOnlyList<FocusDevice> AvailableDevices = new []
         {
-            FocusDevice.Mock
+            FocusDevice.Mock,
+            FocusDevice.Neurosity
         };
 
         private void Awake()
@@ -51,7 +52,7 @@ namespace DreamscapeGrove.Core
             device switch
             {
                 FocusDevice.Mock => new MockFocusSource(),
-                // FocusDevice.Neurosity => new CrownFocusSource(),
+                FocusDevice.Neurosity => new NeurosityWsFocusSource(),
                 _ => new MockFocusSource()
             };
 
@@ -63,6 +64,11 @@ namespace DreamscapeGrove.Core
         public static void SetConfidenceThreshold(float confidence)
         {
             ConfidenceThreshold = Mathf.Clamp01(confidence);
+        }
+
+        private void OnApplicationQuit()
+        {
+            Instance.Source?.DisposeIfNeeded();
         }
     }
 }

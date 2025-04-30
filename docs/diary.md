@@ -61,3 +61,14 @@ Tag   : v0.0.3-alpha
 
 Commit: focus graph colours + moving threshold bar (#dreamscapegrove)
 Tag   : v0.0.3-alpha
+
+## 2025-04-30
+
+* Added **focus-osc-bridge.js** – logs into Crown via Neurosity SDK and rebroadcasts `/focus` on UDP 9001 (localhost).
+* New **NodeBridgeProcess** auto-spawns the bridge at game launch and kills it on exit.
+* Refactored OSC adapter → `NeurosityWsFocusSource` (default port 9001).
+* Updated README with environment variables and new setup steps.
+* Live focus now controls DreamscapeGrove with ~300 ms latency.
+
+Commit: Crown SDK focus bridge + auto launcher (#dreamscapegrove)
+Tag   : v0.1.0
