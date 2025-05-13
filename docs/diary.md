@@ -72,3 +72,17 @@ Tag   : v0.0.3-alpha
 
 Commit: Crown SDK focus bridge + auto launcher (#dreamscapegrove)
 Tag   : v0.1.0
+
+## 2025-05-13
+
+* **TreeSpawn mechanic** rewritten for multi-species forest.
+  - Added `TreeSpecies` ScriptableObject (list of stages, uniform scale xyz).
+  - Added `StagedTree` MonoBehaviour with `Grow()` / `Shrink()` API:
+        • returns false when fully grown or dead.
+  - `TreeSpawnController` now spawns random prefabs from a list and keeps
+    a `List<StagedTree>` instead of GameObjects.
+* Verified: sustained focus spawns diverse trees; loss of focus shrinks /
+  removes them in reverse order.
+
+Commit: add multi-species TreeSpawn system (#dreamscapegrove)
+Tag   : v0.1.1
