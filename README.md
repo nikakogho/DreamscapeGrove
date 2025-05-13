@@ -1,10 +1,12 @@
 # DreamscapeGrove 🌲🧠
 
-A neurofeedback sandbox where a living forest grows only when the player’s **focus** exceeds configurable thresholds.
-The project serves two goals:
+An open-source neurofeedback sandbox where a stylised forest responds to your
+brain-measured **focus**.  Grow majestic trees when attention is high, watch
+them wither when it drops, and plug in any BCI headset through a thin adapter
+layer.
 
-1. **Focus-training game** – calm, positive-reinforcement loop for users to help them gain focus and self-control.
-2. **Open BCI playground** – pluggable interface so researchers can swap in new headsets or signal-processing pipelines with minimal code.
+* **Focus-training game** – calm, positive-reinforcement loop for users to help them gain focus and self-control.
+* **Open BCI playground** – pluggable interface so researchers can swap in new headsets or signal-processing pipelines with minimal code.
 
 ## Supported Devices
 
@@ -26,9 +28,13 @@ A **Device** dropdown in the Settings panel lets you switch sources at runtime.
 
 ```bash
 git clone https://github.com/nikakogho/DreamscapeGrove.git
+cd DreamscapeGrove
+npm install          # installs @neurosity/sdk, osc, dotenv
 ```
 
 ### Set environment variables
+
+Create a .env with these or set them manually
 
 | Name         | Example               | Purpose                                                        |
 | --------     | ----                  | -------                                                        |
@@ -97,13 +103,16 @@ Assets/
 
 ## Roadmap
 
-| Milestone | Status       | Target |
-| --------  | ----         | ------- |
-| 0.1       | ✓           | Settings UI – sliders for thresholds, device dropdown |
-| 0.2       | ✓           | on-screen focus graph |
-| 0.3       | ✓           | Neurosity “focus” adapter |
-| 0.4       | ☐           | Raw EEG processing (theta:beta) + artifact rejection |
-| 0.5       | ☐           | WebGL build + first YouTube demo |
+| Milestone                                                         | Status |
+| ----------------------------------------------------------------- | ------ |
+| **0.1** Settings UI & device dropdown                             | ✔      |
+| **0.2** Live focus graph                                          | ✔      |
+| **0.3** Crown focus via SDK bridge                                | ✔      |
+| **0.4** TreeSpawn visual (multiple trees appear / die)            | ☐      |
+| **0.5** Windows standalone build + ZIP + setup doc                | ☐      |
+| **0.6** First dev-log video (overview → demo → code walk-through) | ☐      |
+| **0.7** In-game UI to enter Crown credentials + connection status | ☐      |
+| **0.8** Raw EEG → custom focus DSP (theta/beta)                   | ☐      |
 
 ## Contributing
 
