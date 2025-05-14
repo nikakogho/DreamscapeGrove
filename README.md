@@ -110,7 +110,7 @@ Assets/
 | **0.2** Live focus graph                                          | ✔      |
 | **0.3** Crown focus via SDK bridge                                | ✔      |
 | **0.4** TreeSpawn visual (multiple trees appear / die)            | ✔      |
-| **0.5** Windows standalone build + ZIP + setup doc                | ☐      |
+| **0.5** Windows standalone build + ZIP + setup doc                | ✔      |
 | **0.6** First dev-log video (overview → demo → code walk-through) | ☐      |
 | **0.7** In-game UI to enter Crown credentials + connection status | ☐      |
 | **0.8** Raw EEG → custom focus DSP (theta/beta)                   | ☐      |
