@@ -6,7 +6,7 @@ namespace DreamscapeGrove.Gameplay
 {
     public class TreeSpawnController : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> stagedTreePrefabs;
+        [SerializeField] private List<TreeSpecies> treeSpecies;
         [SerializeField] private Transform spawnParent;
         [SerializeField] private Vector3 startPos;
         [SerializeField] private float spacing = 2f;
@@ -71,15 +71,20 @@ namespace DreamscapeGrove.Gameplay
 
         void SpawnNewTree()
         {
-            if (stagedTreePrefabs.Count == 0) return;
+            if (treeSpecies.Count == 0) return;
 
-            int pick = Random.Range(0, stagedTreePrefabs.Count);
-            GameObject prefab = stagedTreePrefabs[pick];
+            int pick = Random.Range(0, treeSpecies.Count);
+            var species = treeSpecies[pick];
 
             Vector3 pos = startPos + GetSpawnPosition(forest.Count);
-            GameObject go = Instantiate(prefab, pos, Quaternion.identity, spawnParent);
+            GameObject treeObject = new GameObject(species.name);
+            treeObject.transform.SetParent(spawnParent);
+            treeObject.transform.position = pos;
 
-            current = go.GetComponent<StagedTree>();
+            var st = treeObject.AddComponent<StagedTree>();
+            st.Init(species);
+
+            current = st;
             forest.Add(current);
         }
     }

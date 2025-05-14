@@ -86,3 +86,18 @@ Tag   : v0.1.0
 
 Commit: add multi-species TreeSpawn system (#dreamscapegrove)
 Tag   : v0.1.1
+
+## 2025-05-14
+
+## 2025-04-30
+
+* Refactored **TreeSpawn** with multi-species support.
+  - `TreeSpecies` SO now has `name` and uniform xyz scale.
+  - `StagedTree` holds a private species and exposes `Init(TreeSpecies)`; Grow/Shrink scale all axes.
+  - `TreeSpawnController` references a list of TreeSpecies assets, spawns a
+    blank GameObject, names it after the species, adds StagedTree, and calls
+    `Init()`. Trees are stored as `List<StagedTree>`.
+* Verified random species spawn, growth chain, and shrink-back logic.
+
+Commit: TreeSpawn multi-species refactor + Init injection (#dreamscapegrove)
+Tag   : v0.1.2

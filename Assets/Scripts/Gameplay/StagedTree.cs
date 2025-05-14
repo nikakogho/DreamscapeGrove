@@ -5,12 +5,15 @@ namespace DreamscapeGrove.Gameplay
     /// <summary>Handles one tree that progresses through species stages.</summary>
     public class StagedTree : MonoBehaviour
     {
-        [SerializeField] private TreeSpecies species;
-
+        private TreeSpecies species;
         private int stageIndex;
         private GameObject visual;
 
-        private void Awake() => LoadStage(0);
+        public void Init(TreeSpecies species)
+        {
+            this.species = species;
+            LoadStage(0);
+        }
 
         /* ---------- Public API ---------- */
 
