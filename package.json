@@ -1,0 +1,17 @@
+{
+  "name": "dreamscape-focus-bridge",
+  "version": "1.0.0",
+  "description": "Neurosity SDK → OSC /focus bridge for DreamscapeGrove",
+  "type": "module",
+  "main": "focus-osc-bridge.js",
+  "scripts": {
+    "start": "node focus-osc-bridge.js"
+  },
+  "author": "Nika K.",
+  "license": "MIT",
+  "dependencies": {
+    "@neurosity/sdk": "^12.4.0",
+    "dotenv": "^16.4.0",
+    "osc": "^2.5.0"
+  }
+}
