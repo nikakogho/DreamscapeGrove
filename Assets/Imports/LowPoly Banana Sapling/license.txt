@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Banana Sapling
+* source:	https://sketchfab.com/3d-models/low-poly-banana-sapling-ed8ac30dce9f433781022ed518ed52ac
+* author:	Matrix Rex (https://sketchfab.com/matrixrex)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Banana Sapling" (https://sketchfab.com/3d-models/low-poly-banana-sapling-ed8ac30dce9f433781022ed518ed52ac) by Matrix Rex (https://sketchfab.com/matrixrex) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

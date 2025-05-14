@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace DreamscapeGrove.Gameplay
 {
@@ -8,6 +9,9 @@ namespace DreamscapeGrove.Gameplay
         private TreeSpecies species;
         private int stageIndex;
         private GameObject visual;
+
+        private TreeStage CurrentStage => species.stages[stageIndex];
+        private bool IsFullyGrown => stageIndex == species.stages.Count - 1 && visual != null && Mathf.Approximately(visual.transform.localScale.x, CurrentStage.targetScale);
 
         public void Init(TreeSpecies species)
         {
@@ -20,7 +24,7 @@ namespace DreamscapeGrove.Gameplay
         /// <returns>true if still growing possible</returns>
         public bool Grow(float amount)
         {
-            if (!visual) return false;
+            if (!visual || stageIndex < 0 || IsFullyGrown) return false;
 
             float target = species.stages[stageIndex].targetScale;
             visual.transform.localScale = Vector3.MoveTowards(
@@ -30,9 +34,9 @@ namespace DreamscapeGrove.Gameplay
 
             if (Mathf.Approximately(visual.transform.localScale.x, target))
             {
-                stageIndex++;
-                if (stageIndex < species.stages.Count)
+                if (stageIndex < species.stages.Count - 1)
                 {
+                    stageIndex++;
                     LoadStage(stageIndex);
                     return true;
                 }
@@ -44,7 +48,7 @@ namespace DreamscapeGrove.Gameplay
         /// <returns>true if tree is still alive</returns>
         public bool Shrink(float amount)
         {
-            if (!visual) return false;
+            if (!visual || stageIndex < 0) return false;
 
             visual.transform.localScale = Vector3.MoveTowards(
                 visual.transform.localScale,
@@ -59,7 +63,7 @@ namespace DreamscapeGrove.Gameplay
                 r.material.color = Color.Lerp(Color.red, Color.white, t);
             }
 
-            if (visual.transform.localScale.x <= 0.01f)
+            if (stageIndex >= 0 && visual.transform.localScale.x <= CurrentStage.startScale)
             {
                 stageIndex--;
                 if (stageIndex >= 0)
@@ -78,7 +82,11 @@ namespace DreamscapeGrove.Gameplay
         /* ---------- Helpers ---------- */
         private void LoadStage(int index, float? scale = null)
         {
-            if (visual) Destroy(visual);
+            if (visual)
+            {
+                Destroy(visual);
+                visual = null;
+            }
 
             var stage = species.stages[index];
             var prefab = species.stages[index].prefab;

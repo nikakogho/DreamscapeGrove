@@ -54,17 +54,16 @@ namespace DreamscapeGrove.Gameplay
             if (currentSquare * currentSquare < index + 1) currentSquare++;
 
             int lastSquare = currentSquare - 1;
-
             int offset = index - lastSquare * lastSquare;
 
             /*
-            0 1 8
-            2 3 7
+            0 3 8
+            1 2 7
             4 5 6
             */
 
-            int x = offset < currentSquare ? offset : currentSquare;
-            int z = offset < currentSquare ? currentSquare : (lastSquare - (offset - currentSquare));
+            int x = Mathf.Min(offset, lastSquare);
+            int z = offset < lastSquare ? lastSquare : (lastSquare - (offset - lastSquare));
 
             return new Vector3(x, 0, z) * spacing;
         }
