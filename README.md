@@ -20,7 +20,8 @@ A **Device** dropdown in the Settings panel lets you switch sources at runtime.
 
 ## User Quick Start
 
-> A WebGL build will be published soon – for now run locally
+Download the latest Windows build from the
+[Releases page](https://github.com/nikakogho/DreamscapeGrove/releases).
 
 ## Local Quick Start
 
